@@ -142,13 +142,17 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         super.onCreate(savedInstanceState);
 
         final Cheese[] cheesesAdvanced = {
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
-                new Cheese("Parmesan", "Hard, granular cheese", "info info"),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.convertible),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.coupe),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.convertible),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.coupe),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.convertible),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.coupe),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.convertible),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.coupe),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.convertible),
+                new Cheese("Parmesan", "Hard, granular cheese", "info info", R.drawable.coupe),
+
         };
 
         ArrayAdapter<Cheese> cheeseAdapterAdvanced =
@@ -171,16 +175,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                             viewHolder.cheeseName = convertView.findViewById(R.id.cheese_name);
                             viewHolder.cheeseDescription = convertView.findViewById(R.id.cheese_description);
                             viewHolder.cheeseInfo = convertView.findViewById(R.id.cheese_info);
+                            viewHolder.cheeseImage = convertView.findViewById(R.id.cheese_image);
                             convertView.setTag(viewHolder);
                         }
 
                         TextView cheeseName = ((ViewHolder) convertView.getTag()).cheeseName;
                         TextView cheeseDescription = ((ViewHolder) convertView.getTag()).cheeseDescription;
                         TextView cheeseInfo = ((ViewHolder) convertView.getTag()).cheeseInfo;
+                        ImageView cheeseImage = ((ViewHolder) convertView.getTag()).cheeseImage;
 
                         cheeseName.setText(currentCheese.name);
                         cheeseDescription.setText(currentCheese.description);
                         cheeseInfo.setText(currentCheese.info);
+                        cheeseImage.setImageResource(currentCheese.image);
 
                         return convertView;
 
